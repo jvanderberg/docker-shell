@@ -58,3 +58,17 @@ The terminal will also run inside the container, though defaults to bash.
 
 The keys in the container at /home/username/.ssh will be used. Either generate new keys for the container, or copy them from /home/.ssh.
 
+# Installing new software
+
+If you want to just try something out you can use:
+
+sudo apt-get install package
+
+This will not persist between sessions.
+
+To install software persistently, add a new line to the Dockerfile:
+
+RUN apt-get -y install
+
+Then re-run build.sh
+
