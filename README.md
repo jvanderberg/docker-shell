@@ -26,7 +26,7 @@ This will use the docker-cli to launch a fish shell inside the container.
 
 The following directories are mapped into the container:
 
-1. ~:/home
+1. ~:/host
 2. ${PWD}/backup:/backup
 3. username_home:/home/username
 
@@ -56,7 +56,7 @@ The terminal will also run inside the container, though defaults to bash.
 
 # SSH keys
 
-The keys in the container at /home/username/.ssh will be used. Either generate new keys for the container, or copy them from /home/.ssh.
+The keys in the container at /home/username/.ssh will be used. Either generate new keys for the container, or copy them from /host/.ssh.
 
 # Installing new software
 
