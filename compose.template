@@ -1,0 +1,17 @@
+version: '2'
+services:
+    shell:
+        build:
+          context: .
+          args:
+            - username=${username}
+        volumes:
+          - .:/workspace:cached
+          - ./backup:/backup:cached
+          - "${username}_home:/home/${username}"
+          - "${username}_home:/workspace/home/${username}"
+          - /var/run/docker.sock:/var/run/docker.sock
+        command: /bin/sh -c "while sleep 1000; do :; done"
+volumes:
+  ${username}_home:
+    external: true
