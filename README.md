@@ -35,6 +35,14 @@ If you want to add more, edit the command line in shell.sh.
 
 Inside the container run /backup/backup.sh, this will tar the home directory and place it in /backup/home.tgx. As /backup is mapped in from this project's backup directory, you now have a convenient backup of the home directory on the host system.
 
+# Docker in Docker
+
+The docker cli is installed in the container, and has been mapped to use the host's docker backend.
+
+You can run docker commands using:
+
+sudo docker command [options]
+
 # Using VSCode to edit name volume contents
 
 First run the build step above, then open this directory in VSCode. Next use the VSCode command 'Reopen in Container' to launch the special docker config contained in the docker-compose.yml the build step generated.
